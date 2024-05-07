@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const Listing = require("./models/listing");
+
+const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
 main()
   .then(() => console.log("Connected to DB"))
   .catch((err) => console.log(err));
-
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
 async function main() {
   await mongoose.connect(MONGO_URL);
@@ -14,6 +15,21 @@ async function main() {
 
 app.get("/", (req, res) => {
   res.send("Hi, I am root!");
+});
+
+app.get("/testListing", async (req, res) => {
+  let sampleListing = new Listing({
+    title: "My new villa",
+    description: "By the beach",
+    price: 1200,
+    location: "California",
+    country: "India",
+  });
+  await sampleListing
+    .save()
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+  res.send("successful testing");
 });
 
 app.listen(8080, () => {
