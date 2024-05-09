@@ -17,7 +17,12 @@ app.get("/", (req, res) => {
   res.send("Hi, I am root!");
 });
 
-app.get("/testListing", async (req, res) => {
+app.get("/listing", async (req, res) => {
+  const allListings = await Listing.find({});
+  res.render("index.ejs", { allListings });
+});
+
+/* 
   let sampleListing = new Listing({
     title: "My new villa",
     description: "By the beach",
@@ -31,6 +36,7 @@ app.get("/testListing", async (req, res) => {
     .catch((err) => console.log(err));
   res.send("successful testing");
 });
+ */
 
 app.listen(8080, () => {
   console.log("server is listening on port 8080");

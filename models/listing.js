@@ -8,9 +8,20 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    type: String,
-    default: "https://ibb.co/0t3gtwT",
-    set: (v) => (v === "" ? "https://ibb.co/0t3gtwT" : v),
+    // type: String,
+    // default: "https://ibb.co/0t3gtwT",
+    // set: (v) => (v === "" ? "https://ibb.co/0t3gtwT" : v),
+    filename: {
+      type: String,
+      required: true,
+      default: "listingimage",
+    },
+    url: {
+      type: String,
+      required: true,
+      default: "https://ibb.co/0t3gtwT",
+      set: (v) => (v === "" ? "https://ibb.co/0t3gtwT" : v),
+    },
   },
   price: Number,
   location: String,
