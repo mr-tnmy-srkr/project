@@ -12,3 +12,32 @@
 .nav-link {
   color: #222 !important;
 }
+/* Footer */
+.f-info-links a {
+  text-decoration: none;
+  color: #222;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+.f-info-links .f-info-socials {
+  width: 100%;
+  vertical-align: middle;
+}
+.f-info-socials .f-info-brand {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
