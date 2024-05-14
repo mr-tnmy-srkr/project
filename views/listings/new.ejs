@@ -12,7 +12,12 @@
       <br />
       <br />
       <h3>Create a New Listing</h3>
-      <form method="POST" action="/listings">
+      <form
+        method="POST"
+        action="/listings"
+        class="needs-validation"
+        novalidate
+      >
         <div>
           <label for="title" class="form-label">Title</label>
           <input
@@ -22,6 +27,11 @@
             class="form-control mb-3"
             required
           />
+
+          <div class="valid-feedback">Title Looks good!</div>
+          <div class="invalid-feedback">
+            Please Enter a Valid Title
+          </div>
         </div>
 
         <div>
@@ -31,6 +41,10 @@
             class="form-control mb-3"
             required
           ></textarea>
+          <div class="valid-feedback">Description Looks good!</div>
+          <div class="invalid-feedback">
+            Please Enter a Short Description
+          </div>
         </div>
 
         <div>
@@ -50,10 +64,14 @@
               type="number"
               name="listing[price]"
               placeholder="₹ 1200"
-              min="1"
+              min="10"
               class="form-control mb-3"
               required
             />
+            <div class="valid-feedback">Price Looks good!</div>
+            <div class="invalid-feedback">
+              Please Enter a Valid Price
+            </div>
           </div>
           <div class="mb-3 col-md-8">
             <label for="country" class="form-label">Country</label>
@@ -64,6 +82,10 @@
               class="form-control mb-3"
               required
             />
+            <div class="valid-feedback">Country Name Looks good!</div>
+            <div class="invalid-feedback">
+              Please Enter the Country
+            </div>
           </div>
         </div>
 
@@ -76,6 +98,10 @@
             class="form-control mb-3"
             required
           />
+          <div class="valid-feedback">Location Looks good!</div>
+          <div class="invalid-feedback">
+            Please Enter the Location
+          </div>
         </div>
 
         <br />
