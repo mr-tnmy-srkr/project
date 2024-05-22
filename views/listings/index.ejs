@@ -14,7 +14,7 @@
     class="row row-cols-xl-4 row-cols-lg-3 row row-cols-md-3 row-cols-sm-1 row-cols-1"
   >
     <% for(let listing of allListings){ %>
-    <div class="listing-card col " style="width: 20rem">
+    <div class="listing-card col" style="width: 20rem">
       <a href="/listings/<%= listing._id %>" class="listing-link">
         <img
           src="<%= listing.image %>"
@@ -22,7 +22,7 @@
           alt="listing_image"
           style="height: 20rem"
         />
-        <div class=""></div>
+        <!-- <div class="card-img-overlay"><i class="fa-regular fa-heart"></i></div> -->
         <div class="card-body">
           <h5 class="card-title"><%= listing.title %></h5>
           <p class="card-text">
